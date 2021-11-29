@@ -1,0 +1,32 @@
+Results for the tinyArray
+insert 29.083 μs
+append 82.708 μs
+
+Results for the smallArray
+insert 38.458 μs
+append 92.833 μs
+
+Results for the mediumArray
+insert 216.375 μs
+append 154.459 μs
+
+Results for the largeArray
+insert 9.990417 ms
+append 696.042 μs
+
+Results for the extraLargeArray
+insert 1.077850292 s
+append 3.99175 ms
+
+
+                    insert          append
+tinyArray           29.083 μs       82.708 μs
+smallArray          38.458 μs       92.833 μs
+mediumArray         216.375 μs      154.459 μs
+largeArray          9.990417 ms     696.042 μs
+extraLargeArray     1.077850292 s   3.99175 ms
+
+Based on the results above you can see that there is a pattern where the insert function takes a shorter time to run than append function when using arrays of increasing size as input. In addition, as the input array grows in size, the time it takes the insert function to complete grows at a much higher rate than the append function. When using arrays of smaller size the time it takes each functions to complete are similar but as the size of the input array increases you can see the append function scales much better. This is due to the diffrences between the push and unshift array methods and their time complexity. Push adds an element and the end of an array which is constant time or O(1). Unshift adds an element to beginning of array which causes all the other indexes in array to be shifted over by 1. The number of times this shift occurs is n or the size of the array. Therefore, the time complexity of unshift is linear or O(n). 
+
+
+
